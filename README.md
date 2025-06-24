@@ -1,4 +1,4 @@
-Summary - A sleek and secure note-taking web app built with Django. Log in, take notes, pin important ones, search instantly — all in a distraction-free interface.
+A sleek and secure note-taking web app built with Django. Log in, take notes, pin important ones, search instantly — all in a distraction-free interface.
 
 
 ## 🚀 Features

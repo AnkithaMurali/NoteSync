@@ -24,6 +24,13 @@
 
 <h4 class="mb-3">Your Notes:</h4>
 
+<!-- ➕ Add Note Button -->
+<div class="mb-4 text-end">
+    <a href="{% url 'add_note' %}" class="btn btn-success">
+        ➕ Add New Note
+    </a>
+</div>
+
 {% for note in notes %}
     <div class="note-card">
         <h5>{{ note.title }}</h5>
@@ -32,7 +39,8 @@
         <a href="{% url 'edit_note' note.id %}" class="btn btn-sm btn-outline-secondary mt-2">Edit</a>
         <a href="{% url 'delete_note' note.id %}" class="btn btn-sm btn-outline-danger mt-2">Delete</a>
         <a href="{% url 'toggle_pin' note.id %}" class="btn btn-sm btn-outline-warning mt-2">
-            {% if note.pinned %} Unpin {% else %} Pin {% endif %}
+            {% if note.is_pinned %}Unpin{% else %}Pin{% endif %}
+
 </a>
 
     </div>
@@ -41,4 +49,6 @@
 {% endfor %}
 
 {% endblock %}
+
+
 

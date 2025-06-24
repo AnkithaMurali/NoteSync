@@ -1,0 +1,4 @@
+django
+channels
+djangorestframework
+channels_redis  # Optional for production

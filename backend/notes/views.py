@@ -27,7 +27,7 @@ def home(request):
             Q(title__icontains=query) | Q(content__icontains=query)
         ).order_by('-pinned', '-created_at')
     else:
-        notes = Note.objects.filter(user=request.user).order_by('-pinned', '-created_at')
+        notes = Note.objects.filter(user=request.user).order_by('-is_pinned', '-created_at')
 
     return render(request, 'home.html', {'notes': notes})
 
@@ -40,7 +40,6 @@ def add_note(request):
             note = form.save(commit=False)
             note.user = request.user
             note.save()
-            form.save_m2m()
             return redirect('home')
     else:
         form = NoteForm()

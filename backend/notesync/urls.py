@@ -7,8 +7,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('add/', add_note, name='add_note'),
-    path('edit/<int:note_id>/', edit_note, name='edit_note'),   # ✅ Add this
-    path('delete/<int:note_id>/', delete_note, name='delete_note'),  # ✅ Add this
+    path('edit/<int:note_id>/', edit_note, name='edit_note'),   
+    path('delete/<int:note_id>/', delete_note, name='delete_note'),  
     path('signup/', signup_view, name='signup'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
